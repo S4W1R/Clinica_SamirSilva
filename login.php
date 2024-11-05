@@ -1,5 +1,15 @@
 <?php
 session_start();
+$login = "admin";
+$senha = "1234";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $login = $_POST['login'] ?? '';
+    $senha = $_POST['senha'] ?? '';
+
+    $login = htmlspecialchars($login, ENT_QUOTES, 'UTF-8');
+    $senha = htmlspecialchars($senha, ENT_QUOTES, 'UTF-8');
+}
 ?>
 
 <!DOCTYPE html>
